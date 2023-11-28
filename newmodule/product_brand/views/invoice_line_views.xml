@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+
+        <record id="invoice_inherit_views_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="after">
+                    <field name="mrp" string="MRP"/>
+                    <field name="sale_price"/>
+                    <field name="brand_name" groups="product_brand.brand_view_account"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

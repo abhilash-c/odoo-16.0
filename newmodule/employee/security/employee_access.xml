@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="employee_view_user" model="res.groups">
+            <field name="name">employee_user</field>
+            <field name="comment">Group Comment</field>
+    </record>
+
+</odoo>

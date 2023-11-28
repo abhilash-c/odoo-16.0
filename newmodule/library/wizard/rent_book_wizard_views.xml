@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="rent_book_wizard_view">
+        <field name="name">rent.book.wizard.form</field>
+        <field name="model">rent.book.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Rent Book Wizard">
+                <group>
+                    <group>
+                        <field name="borrower_id"/>
+                    </group>
+                    <group>
+                        <field name="book_ids" widget="many2many_tags"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Rent Books" type="object" class="oe_highlight" name="rent_book"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="rent_book_wizard_action" model="ir.actions.act_window">
+        <field name="name">Rent</field>
+        <field name="res_model">rent.book.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

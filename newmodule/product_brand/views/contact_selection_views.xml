@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_res_partner_vendor_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.vendor.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <group>
+                <xpath expr="//field[@name='vat']" position="after">
+                    <group>
+                        <field name='approval_state'/>
+                    </group>
+                </xpath>
+                 <xpath expr="//field[@name='category_id']" position="after">
+                    <group>
+                        <field name="customer_number"/>
+                    </group>
+                </xpath>
+            </group>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="menu_invoice_tag" model="ir.ui.menu">
+            <field name="name">Invoice Tags</field>
+            <field name="parent_id" ref="account.menu_finance_configuration"/>
+            <field name="action" ref="invoice_tags_action"/>
+        </record>
+
+    </data>
+</odoo>

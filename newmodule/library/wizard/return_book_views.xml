@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="return_book_view">
+        <field name="name">return book form</field>
+        <field name="model">return.book</field>
+        <field name="arch" type="xml">
+            <form string="Return Book">
+                <group>
+                    <group>
+                        <field name="borrowers_id"/>
+                        <field name="books_ids" widget="many2many_tags"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Return Books" type="object" class="oe_highlight" name="return_book"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="return_book_action" model="ir.actions.act_window">
+        <field name="name">Return</field>
+        <field name="res_model">return.book</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

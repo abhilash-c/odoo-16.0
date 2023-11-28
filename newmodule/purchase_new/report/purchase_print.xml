@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="purchase_report" model="ir.actions.report">
+        <field name="name">Purchase Report</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">purchase_new.report_purchase</field>
+        <field name="report_file">purchase_new.report_purchase</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_purchase">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <h1><center>PURCHASE REPORT</center></h1>
+                <br/>
+                <div class="content">
+                    <div class="order-info">
+                        <p><strong>Order Name:</strong><br/> <span t-field="o.name"/></p>
+                        <p><strong>Order Date:</strong><br/> <span t-field="o.date_order"/></p>
+                    </div>
+                    <br/>
+                </div>
+                <center>
+                    <table class="custom-table">
+                        <tr>
+                            <th style="text-align: left;">Product Name</th>
+                            <th style="width: 300px; text-align: center;">MRP</th>
+                            <th style="width: 300px; text-align: center;">Sale Price</th>
+                        </tr>
+                        <t t-foreach="o.order_line" t-as="purchase">
+                            <tr>
+                                <td style="text-align: left;">
+                                    <span t-field="purchase.product_id.name"/>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span t-field="purchase.mrp"/>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span t-field="purchase.list_price"/>
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+                        </tr>
+                    </table>
+                </center>
+            </t>
+        </t>
+    </template>
+</odoo>

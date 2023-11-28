@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="sale_order_stock_move_line" model="ir.ui.view">
+            <field name="name">sale.order.stock.move.line</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='customer_signature']" position="after">
+                    <page name="Stock Move line" string="Stock Move Line">
+                        <field name="stock_move_line_ids"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <menuitem id="food_items_menu_root" name="Items">
+        <menuitem id="food_items_first_level_menu" name="food items options">
+             <menuitem id="food_products_menu_action" action="food_products_action"/>
+        </menuitem>
+
+        <menuitem id="product_brand_action_second_level_menu" name="product brand options">
+            <menuitem id="product_brand_menu_action" action="product_brand_action"/>
+            <menuitem id="product_wizard_menu_action" action="food_products_wizard_action"/>
+        </menuitem>
+
+        <menuitem id="material_product_first_level_menu" name="material product options">
+             <menuitem id="material_product_menu_action" action="material_product_action"/>
+        </menuitem>
+
+         <menuitem id="cloth_product_first_level_menu" name="cloth product options">
+             <menuitem id="cloth_product_menu_action" action="cloth_product_action"/>
+        </menuitem>
+
+        <menuitem id="vehicle_acc_product_first_level_menu" name="vehicle product options">
+             <menuitem id="vehicle_product_menu_action" action="vehicle_product_action"/>
+        </menuitem>
+
+        <menuitem id="school_acc_product_first_level_menu" name="school product options">
+             <menuitem id="school_accessories_menu_action" action="school_accessories_action"/>
+        </menuitem>
+    </menuitem>
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="view_customer_contacts_tree" model="ir.ui.view">
+            <field name="name">customer_contacts_tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_name" string="Name"/>
+                </tree>
+            </field>
+        </record>
+
+         <record id="view_customer_contacts_form" model="ir.ui.view">
+            <field name="name">customer_contacts_form</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" string="Name" readonly="0"/>
+                        </group>
+                        <create/>
+                    </sheet>
+                </form>
+            </field>
+         </record>
+
+        <record id="action_customer_contacts" model="ir.actions.act_window">
+            <field name="name">Contacts</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[((5,0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_customer_contacts_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_customer_contacts_form')}))]"/>
+            <field name="domain">[('customer_rank', '=', 1)]</field>
+            <field name="context">{'default_customer_rank': 1}</field>
+            <field name="limit">20</field>
+        </record>
+
+    </data>
+</odoo>

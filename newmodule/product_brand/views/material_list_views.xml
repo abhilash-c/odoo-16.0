@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <odoo>
+        <record id="material_list_view_form" model="ir.ui.view">
+                <field name="name">material.list.view.form</field>
+                <field name="model">material.list</field>
+                <field name="arch" type="xml">
+                    <form string="Material List">
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="quantity"/>
+                                    <field name="code"/>
+                                    <field name="amount"/>
+                                </group>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+    </odoo>
+
+    <record id="material_list_tree" model="ir.ui.view">
+        <field name="name">material_list.tree</field>
+        <field name="model">material.list</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" string="Material List">
+                <field name="name"/>
+                <field name="quantity"/>
+                <field name="code"/>
+                <field name="amount"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+
+    <data>
+        <record id="material_list_action" model="ir.actions.act_window">
+            <field name="name">List</field>
+            <field name="res_model">material.list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

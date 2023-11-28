@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="invoice_tags_view_form" model="ir.ui.view">
+        <field name="name">invoice_tags_form</field>
+        <field name="model">invoice.tags</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Tags">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="invoice_tags_view_tree" model="ir.ui.view">
+        <field name="name">invoice_tags_tree</field>
+        <field name="model">invoice.tags</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Tags">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <data>
+        <record id="invoice_tags_action" model="ir.actions.act_window">
+            <field name="name">Tags</field>
+            <field name="res_model">invoice.tags</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

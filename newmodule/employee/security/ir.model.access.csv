@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_management,access_employee_management,model_employee_management,,1,1,1,1
+access_department,access_department,model_department,,1,1,1,1
+access_wizard_reviews,access_wizard_reviews,model_wizard_reviews,,1,1,1,1
+access_review,access_review,model_review,,1,1,1,1

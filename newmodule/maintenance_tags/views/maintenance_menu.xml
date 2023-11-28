@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="menu_maintenance_tag" model="ir.ui.menu">
+            <field name="name">Maintenance Tags</field>
+            <field name="parent_id" ref="maintenance.menu_maintenance_configuration"/>
+            <field name="action" ref="maintenance_tags_action"/>
+        </record>
+    </data>
+</odoo>

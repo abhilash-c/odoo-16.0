@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_task,access_task_task,model_task_task,,1,1,1,1
+access_note_book,access_note_book,model_note_book,,1,1,1,1
+access_users_management,access_users_management,model_users_management,,1,1,1,1

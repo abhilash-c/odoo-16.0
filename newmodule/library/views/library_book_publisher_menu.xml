@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <menuitem id="library_book_menu_root" name="Library">
+            <menuitem id="library_book_second_level_menu" name="Configuration">
+                <menuitem id="book_publisher_menu_action" action="book_publisher_action"/>
+                <menuitem id="return_book_menu_action" action="return_book_action"/>
+            </menuitem>
+            <menuitem id="library_book_category_menu" name="Category">
+                <menuitem id="library_book_category_menu_action" action="library_book_category_action"/>
+            </menuitem>
+            <menuitem id="library_book_rent_menu" name="Book Rent">
+                <menuitem id="library_book_rent_menu_action" action="library_book_rent_action"/>
+            </menuitem>
+            <menuitem id="rent_book_menu" name="Rent Book">
+                <menuitem id="rent_book_menu_action" action="rent_book_wizard_action"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

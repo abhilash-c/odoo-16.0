@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <odoo>
+        <record id="food_items_view_form" model="ir.ui.view">
+                <field name="name">food.items.view.form</field>
+                <field name="model">food.items</field>
+                <field name="arch" type="xml">
+                    <form string="Food Items">
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="quantity"/>
+                                    <field name="code"/>
+                                    <field name="amount"/>
+                                </group>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+        </odoo>
+
+        <record id="food_items_tree" model="ir.ui.view">
+            <field name="name">food_items.tree</field>
+            <field name="model">food.items</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="Food Items">
+                    <field name="name"/>
+                    <field name="quantity"/>
+                    <field name="code"/>
+                    <field name="amount"/>
+                    <field name="total"/>
+                </tree>
+            </field>
+        </record>
+
+        <data>
+            <record id="food_items_action" model="ir.actions.act_window">
+                <field name="name">Items</field>
+                <field name="res_model">food.items</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+        </data>
+</odoo>

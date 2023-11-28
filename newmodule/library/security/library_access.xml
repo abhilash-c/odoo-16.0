@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="library_normal_category" model="ir.module.category">
+        <field name="name">Library</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="library_views_access" model="res.groups">
+        <field name="name">Library Views</field>
+        <field name="comment">Group Comment</field>
+        <field name="implied_ids" eval="[(4, ref('normal_user_access'))]"/>
+        <field name="category_id" ref="library_normal_category"/>
+    </record>
+
+    <record id="normal_user_access" model="res.groups">
+        <field name="name">Normal Access</field>
+        <field name="comment">Group Comment</field>
+        <field name="category_id" ref="library_normal_category"/>
+    </record>
+
+</odoo>

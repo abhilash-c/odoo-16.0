@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <menuitem id="customers_menu_root" name="Customers"  action="action_customer_contacts"/>
+    <menuitem id="res_partner_first_level" name="Customers Details"  parent = "customers_menu_root" action="action_customer_contacts"/>
+
+</odoo>

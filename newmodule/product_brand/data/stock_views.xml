@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+    	<record id="stock_template_custom" model="mail.template">
+        	<field name="name">OUT OF STOCK</field>
+        	<field name="model_id"
+               	ref="product_brand.model_sale_order"/>
+        	<field name="email_from">{{ object.current_user.login }}</field>
+        	<field name="email_to">{{ object.partner_id.email }}</field>
+        	<field name="subject">"Product Out of Stock"</field>
+        	<field name="body_html" type="html">
+            	<div style="margin: 0px; padding: 0px;">
+                	<div style="margin: 0px; padding: 0px;">
+                    	<p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        	Dear <t t-out="object.name"/>,
+                        	<br/>
+                        	<br/>
+                        	Hii, This product is currently out of stock
+                        	<br/>
+                        	<br/>
+                        	Regards,
+                        	<br/>
+                        	<t t-out="object.current_user.name"/>
+                    	</p>
+                	</div>
+            	</div>
+        	</field>
+    	</record>
+
+	</data>
+</odoo>

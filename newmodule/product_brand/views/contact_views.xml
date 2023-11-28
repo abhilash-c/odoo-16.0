@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="view_contact_form_inherit" model="ir.ui.view">
+            <field name="name">contact.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" name="button_box">
+                    <button icon="fa-cutlery" type="object" name="open_food_items" class="oe_stat_button" string="Items">
+                    </button>
+                </div>
+                <div class="oe_button_box" name="button_box">
+                    <button icon="fa-gears" type="object" name="open_material_list" class="oe_stat_button" string="Material Items">
+                    </button>
+                </div>
+                 <div class="oe_button_box" name="button_box">
+                    <button icon="fa-suitcase" type="object" name="open_cloth_list" class="oe_stat_button" string="Cloth List">
+                    </button>
+                </div>
+                <div class="oe_button_box" name="button_box">
+                    <button icon="fa-key" type="object" name="open_vehicle_list" class="oe_stat_button" string="Vehicle List">
+                    </button>
+                </div>
+                <div class="oe_button_box" name="button_box">
+                    <button icon="fa-ticket" type="object" name="open_school_list" class="oe_stat_button" string="School List">
+                    </button>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

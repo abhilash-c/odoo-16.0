@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="invoice_view_search" model="ir.ui.view">
+        <field name="name">invoice_form_search</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="tag_ids"/>
+            </xpath>
+        </field>
+    </record>
+
+    <data>
+        <record id="invoice_form_tags_views_form" model="ir.ui.view">
+            <field name="name">invoice_form_tags_form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <group>
+                    <xpath expr="//field[@name='partner_id']" position="after">
+                        <group>
+                            <field name="tag_ids" widget="many2many_tags" invisible="context.get('default_move_type') not in ('out_invoice', 'in_invoice', 'in_bills')"/>
+                        </group>
+                    </xpath>
+                </group>
+            </field>
+        </record>
+    </data>
+
+</odoo>

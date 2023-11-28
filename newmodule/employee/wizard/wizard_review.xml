@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="template_form_view">
+        <field name="name">wizard_reviews</field>
+        <field name="model">wizard.reviews</field>
+        <field name="arch" type="xml">
+            <form string="Wizard Review">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="review"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="update_review" string="Add" type="object" class="btn-primary"/>
+                    <button string="CANCEL" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <data>
+        <record id="wizard_reviews_action" model="ir.actions.act_window">
+            <field name="name">Wizard reviews</field>
+            <field name="res_model">wizard.reviews</field>
+            <field name="view_mode">form</field>
+        </record>
+    </data>
+
+</odoo>

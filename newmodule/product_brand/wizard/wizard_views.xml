@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="food_product_form_view">
+        <field name="name">Product</field>
+        <field name="model">food.product.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="customer_na"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <data>
+        <record id="food_products_wizard_action" model="ir.actions.act_window">
+            <field name="name">Product</field>
+            <field name="res_model">food.product.wizard</field>
+            <field name="view_mode">form</field>
+        </record>
+    </data>
+
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+
+        <record id="author1" model="res.partner">
+            <field name="name">George R.R. Martin</field>
+        </record>
+
+        <record id="author2" model="res.partner">
+            <field name="name">Alex Pina</field>
+        </record>
+
+        <record id="author3" model="res.partner">
+            <field name="name">James peter</field>
+        </record>
+
+         <record id="publishers_1" model="book.publisher">
+            <field name="name">Amazon Prime</field>
+         </record>
+
+        <record id="publishers_2" model="book.publisher">
+            <field name="name">Netflix Publications</field>
+        </record>
+
+        <record id="book1" model="library.book" forcecreate="0">
+            <field name="title">Game Of Thrones</field>
+            <field name="short_title">GOT</field>
+            <field name="release_date">2019-05-19</field>
+            <field name="num_pages">2999</field>
+            <field name="retail_prices">3999</field>
+            <field name="author_ids" eval="[(6, 0, [ref('author1'), ref('author2')])]"/>
+        </record>
+
+        <record id="book2" model="library.book">
+            <field name="title">Money Heist</field>
+            <field name="short_title">MH</field>
+            <field name="release_date">2021-12-03</field>
+            <field name="num_pages">1500</field>
+            <field name="retail_prices">2000</field>
+            <field name="author_ids" eval="[(4, ref('author2'))]"/>
+        </record>
+
+        <record id="book3" model="library.book">
+            <field name="title">Bridge To Terabithia</field>
+            <field name="short_title">BTT</field>
+            <field name="release_date">2007-02-16</field>
+            <field name="num_pages">1000</field>
+            <field name="publisher_id"  eval="ref('publishers_2')"/>
+            <field name="author_ids" eval="[(6, 0, [ref('author3'), ref('author2')])]"/>
+            <field name="retail_prices">2100</field>
+        </record>
+
+        <record id="book4" model="library.book">
+            <field name="title">Predestination</field>
+            <field name="short_title">PDN</field>
+            <field name="release_date">2014-08-28</field>
+            <field name="num_pages">500</field>
+            <field name="publisher_id"  eval="ref('publishers_1')"/>
+            <field name="retail_prices">450</field>
+        </record>
+
+        <record id="book5" model="library.book">
+            <field name="title">Midsommar</field>
+            <field name="short_title">MDR</field>
+            <field name="release_date">2019-07-03</field>
+            <field name="num_pages">800</field>
+            <field name="retail_prices">500</field>
+        </record>
+
+    </data>
+</odoo>

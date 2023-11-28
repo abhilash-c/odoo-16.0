@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="action_update_tag" model="ir.actions.server">
+            <field name="name">Update Tags</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_maintenance_request" />
+            <field name="binding_model_id" ref="model_maintenance_request" />
+            <field name="state">code</field>
+            <field name="code">
+                action= {
+                'name': 'Update Tags',
+                'type': 'ir.actions.act_window',
+                'res_model': 'update.tags.wizard',
+                'view_mode': 'form',
+                "context": "{'active_ids': active_ids}",
+                'target': 'new',
+            }
+            </field>
+        </record>
+    </data>
+</odoo>

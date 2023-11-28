@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="template_form_view">
+        <field name="name">Product_template</field>
+        <field name="model">product.template.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sale price">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="list_price"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="update_price" string="Update Price" type="object" class="btn-primary"/>
+                    <button string="CANCEL" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <data>
+        <record id="template_wizard_action" model="ir.actions.act_window">
+            <field name="name">Sale price</field>
+            <field name="res_model">product.template.wizard</field>
+            <field name="view_mode">form</field>
+        </record>
+    </data>
+
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_book,access_library_book,model_library_book,library.library_views_access,1,1,1,1
+access_library_books,access_library_books,model_library_book,library.normal_user_access,1,0,0,0
+access_book_publisher,access_book_publisher,model_book_publisher,,1,1,1,1
+access_published_books,access_published_books,model_published_books,,1,1,1,1
+access_library_book_category,access_library_book_category,model_library_book_category,,1,1,1,1
+access_library_book_rent,access_library_book_rent,model_library_book_rent,,1,1,1,1
+access_library_books_rent,access_library_books_rent,model_library_book_rent,library.normal_user_access,1,0,0,0
+access_library_book_rent,access_library_book_rent,model_library_book_rent,library.library_views_access,1,1,1,1
+access_rent_book_wizard,access_rent_book_wizard,model_rent_book_wizard,,1,1,1,1
+access_return_book,access_return_book,model_return_book,,1,1,1,1

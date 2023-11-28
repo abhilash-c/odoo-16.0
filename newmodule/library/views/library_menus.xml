@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <menuitem id="library_book_menu_root" name="Library">
+            <menuitem id="library_book_first_level_menu" name="Book">
+                <menuitem id="library_book_menu_action" action="library_book_action"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

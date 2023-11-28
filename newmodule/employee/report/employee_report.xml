@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="employee_report" model="ir.actions.report">
+        <field name="name">Generate Report</field>
+        <field name="model">employee.management</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">employee.report_employee</field>
+        <field name="report_file">employee.report_employee</field>
+        <field name="binding_model_id" ref="employee.model_employee_management"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_employee">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <h1><u><center>Employee Report</center></u></h1>
+                <br/><br/>
+                <h2>First Name : <span t-field="o.first_name"/></h2>
+                <h3>Last Name : <span t-field="o.last_name"/></h3>
+                <center>
+                    <table style="border: 2px solid; width:100%">
+                        <tr>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>department</th>
+                            <th>hire_date</th>
+                            <th>salary</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid;">
+                                <span t-field="o.email"/>
+                            </td>
+                            <td style="border: 1px solid;">
+                                <span t-field="o.phone"/>
+                            </td>
+                            <td style="border: 1px solid;">
+                                <span t-field="o.department"/>
+                            </td>
+                            <td style="border: 1px solid;">
+                                <span t-field="o.hire_date"/>
+                            </td>
+                            <td style="border: 1px solid;">
+                                <span t-field="o.salary"/>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<odoo>-->
+<!--    <menuitem id="task_management_menu_root" name="Tasks">-->
+<!--        <menuitem id="task_management_first_level_menu" name="Task Management">-->
+<!--            <menuitem id="task_management_menu_action" action="task_management_action"/>-->
+<!--        </menuitem>-->
+<!--        <menuitem id="task_management_second_level_menu" name="Settings">-->
+<!--            <menuitem id="task_notes_menu_action" action="task_notes_action"/>-->
+<!--            <menuitem id="task_users_menu_action" action="task_users_action"/>-->
+<!--        </menuitem>-->
+<!--    </menuitem>-->
+<!--</odoo>-->
+
+<odoo>
+    <data>
+        <menuitem id="task_management_menu_root" name="Tasks">
+            <menuitem id="task_management_first_level_menu" name="Task Management">
+                <menuitem id="task_management_menu_action" action="task_management_action"/>
+            </menuitem>
+            <menuitem id="task_management_second_level_menu" name="Configuration">
+                <menuitem id="task_notes_menu_action" action="task_notes_action"/>
+<!--                <menuitem id="task_users_menu_action" action="task_users_action"/>-->
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

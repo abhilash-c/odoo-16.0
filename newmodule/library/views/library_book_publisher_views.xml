@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="book_publisher_view_form" model="ir.ui.view">
+        <field name="name">book.publisher.form</field>
+        <field name="model">book.publisher</field>
+        <field name="arch" type="xml">
+                <form string="Book Publisher">
+                    <sheet>
+                        <h1><field name="name"/></h1>
+                        <group>
+                            <field name="email"/>
+                            <field name="phone_number"/>
+                        </group>
+                        <notebook>
+                            <page name="Books">
+                                <field name="published_books_ids">
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name_id"/>
+                                                <field name="release_date"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                    <tree string="published books">
+                                        <field name="name_id"/>
+                                        <field name="release_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+        </field>
+    </record>
+
+    <record id="book_publisher_view_tree" model="ir.ui.view">
+        <field name="name">book.publisher.tree</field>
+        <field name="model">book.publisher</field>
+        <field name="arch" type="xml">
+            <tree string="Book Publisher view">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <data>
+        <record id="book_publisher_action" model="ir.actions.act_window">
+            <field name="name">Publisher</field>
+            <field name="res_model">book.publisher</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

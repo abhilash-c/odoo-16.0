@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="email_template_custom" model="mail.template">
+            <field name="name">FOOD PRODUCTS</field>
+            <field name="model_id" ref="product_brand.model_food_products"/>
+            <field name="email_from">{{ object.current_user.login }}</field>
+            <field name="email_to">{{ object.customer_name_id.email }}</field>
+            <field name="subject">Food Items for {{ object.customer_name_id.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <div style="margin: 0px; padding: 0px;">
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                            Dear <t t-out="object.customer_name_id.name"/>,
+                            <br/>
+                            <br/>
+                            Good Morning, Here is your ordered Items
+                            <br/>
+                            <br/>
+                            <table style="border: 2px solid; width:100%">
+                                <tr>
+                                    <td>Customer Name : <t t-out="object.customer_name_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Date : <t t-out="object.date"/></td>
+                                </tr>
+                                <br/>
+                                <tr>
+                                    <th style="border: 2px solid;">Name</th>
+                                    <th style="border: 2px solid;">Quantity</th>
+                                    <th style="border: 2px solid;">Code</th>
+                                    <th style="border: 2px solid;">Amount</th>
+                                    <th style="border: 2px solid;">Total</th>
+                                </tr>
+                                <t t-foreach="object.customer_type_ids" t-as="order">
+                                    <tr>
+                                        <td style="border: 2px solid;"><t t-out="order.name"/></td>
+                                        <td style="border: 2px solid;"><t t-out="order.quantity"/></td>
+                                        <td style="border: 2px solid;"><t t-out="order.code"/></td>
+                                        <td style="border: 2px solid;"><t t-out="order.amount"/></td>
+                                        <td style="border: 2px solid;"><t t-out="order.total"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            Regards,
+                            <br/>
+                            <t t-out="object.current_user.name"/>
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_brand,access_product_brand,model_product_brand,,1,1,1,1
+access_food_items,access_food_items,model_food_items,,1,1,1,1
+access_food_products,access_food_products,model_food_products,,1,1,1,1
+access_food_product_wizard,access_food_product_wizard,model_food_product_wizard,,1,1,1,1
+access_product_template_wizard,access_product_template_wizard,model_product_template_wizard,,1,1,1,1
+access_material_list,access_material_list,model_material_list,,1,1,1,1
+access_material_product,access_material_product,model_material_product,,1,1,1,1
+access_cloth_list,access_cloth_list,model_cloth_list,,1,1,1,1
+access_cloth_product,access_cloth_product,model_cloth_product,,1,1,1,1
+access_vehicle_list,access_vehicle_list,model_vehicle_list,,1,1,1,1
+access_vehicle_product,access_vehicle_product,model_vehicle_product,,1,1,1,1
+access_school_acc_list,access_school_acc_list,model_school_acc_list,,1,1,1,1
+access_school_accessories,access_school_accessories,model_school_accessories,,1,1,1,1
